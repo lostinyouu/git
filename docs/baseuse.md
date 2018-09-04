@@ -178,3 +178,39 @@ $ git remote
 > git push origin master
 
 只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时 间克隆，他们先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。 你必须先将他们的工作拉 取下来并将其合并进你的工作后才能推送。
+
+## 标签
+
+### 打标签
+
+> Git 可以给历史中的某一个提交打上标签，以示重要。 比较有代表性的是人 们会使用这个功能来标记发布结点(v1.0 等等)。
+
+### 列出标签
+
+`git tag`
+
+### 创建标签
+
+> Git 使用两种主要类型的标签:轻量标签(lightweight)与附注标签(annotated)
+
+`git tag -a v1.4 -m 'my version 1.4'`, `-m` 选项指定了一条将会存储在标签中的信息。
+`git show v1.4` 查看标签信息与对应的提交信息。
+
+### 轻量标签
+
+> 轻量标签本质上是将提交校验和存储到一个文件中 - 没有保存任 何其他信息。
+
+`git tag v1.4`
+
+## Git 别名
+
+> 使你的 Git 体验更简单、容易、熟悉:
+
+```
+  $ git config --global alias.co checkout
+  $ git config --global alias.br branch
+  $ git config --global alias.ci commit
+  $ git config --global alias.st status
+```
+
+当要输入 `git commit` 时，只需要输入 `git ci`。
